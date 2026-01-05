@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'   => 'mysql:host=gateway01.ap-southeast-1.prod.aws.tidbcloud.com;dbname=db_shop;charset=utf8;port=4000',
 	'hostname' => 'gateway01.ap-southeast-1.prod.aws.tidbcloud.com',
 	'username' => '4Rh4mZWnoC9uHDB.root',
 	'password' => 'PvPyPIwua76npB7t',
 	'database' => 'db_shop',
-	'dbdriver' => 'mysqli',
+	'dbdriver' => 'pdo',
 	'dbprefix' => 'db_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
@@ -88,12 +88,7 @@ $db['default'] = array(
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',
 	'swap_pre' => '',
-	'encrypt' => array(
-    'ssl_verify' => FALSE, 
-    'ssl_key'    => NULL,
-    'ssl_cert'   => NULL,
-    'ssl_ca'     => NULL
-	),
+	'encrypt'  => FALSE,
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
