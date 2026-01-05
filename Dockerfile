@@ -12,5 +12,7 @@ COPY . /var/www/html/
 # Cấp quyền ghi file (quan trọng để web không bị lỗi khi upload ảnh)
 RUN chown -R www-data:www-data /var/www/html
 
+RUN sed -i 's/SECLEVEL=2/SECLEVEL=1/g' /etc/ssl/openssl.cnf
+
 # Mở cổng 80
 EXPOSE 80
