@@ -80,6 +80,12 @@ $db['default'] = array(
 	'password' => 'PvPyPIwua76npB7t',
 	'database' => 'db_shop',
 	'dbdriver' => 'pdo',
+	'options' => array(
+        // Chỉ định đường dẫn chứng chỉ gốc trên server Linux (Render/Ubuntu/Debian)
+        PDO::MYSQL_ATTR_SSL_CA => '/etc/ssl/certs/ca-certificates.crt',
+        // Tắt xác thực tên server để tránh lỗi handshake (vẫn an toàn vì đã có CA)
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false
+    ),
 	'dbprefix' => 'db_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
