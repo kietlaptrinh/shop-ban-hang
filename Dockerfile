@@ -10,6 +10,8 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 # Bật Mod Rewrite
 RUN a2enmod rewrite
 
+RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
+
 # Copy code
 COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
