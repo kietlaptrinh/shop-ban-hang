@@ -88,7 +88,12 @@ $db['default'] = array(
 	'char_set' => 'utf8',
 	'dbcollat' => 'utf8_general_ci',
 	'swap_pre' => '',
-	'encrypt' => TRUE,
+	'encrypt' => array(
+    'ssl_verify' => TRUE, 
+    'ssl_key'    => NULL,
+    'ssl_cert'   => NULL,
+    'ssl_ca'     => NULL
+	),
 	'compress' => FALSE,
 	'stricton' => FALSE,
 	'failover' => array(),
